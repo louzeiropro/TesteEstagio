@@ -1,0 +1,125 @@
+// PERGUNTA 1
+public class Estagio {
+
+	public static void main(String[] args) {
+		
+		int indice = 13;
+		int SOMA = 0;	
+		int K = 0;
+				
+		while (K < indice)
+			K = K + 1;
+			SOMA = SOMA + K;
+		System.out.println(SOMA);
+		
+	}
+}
+
+----------------------------------------------------------------
+
+// PERGUNTA 2
+
+import java.util.Scanner;
+
+public class Estagio {
+
+    public static void main(String[] args) {
+       
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite um número para verificar se pertence à sequência de Fibonacci: ");
+        int numeroInput = scanner.nextInt();
+
+      
+        if (verificaFibonacci(numeroInput)) {
+            System.out.println(numeroInput + " pertence à sequência de Fibonacci.");
+        } else {
+            System.out.println(numeroInput + " não pertence à sequência de Fibonacci.");
+        }
+    }
+
+    public static boolean verificaFibonacci(int numero) {
+        int fib1 = 0, fib2 = 1;
+
+        while (fib2 < numero) {
+            int temp = fib1;
+            fib1 = fib2;
+            fib2 = temp + fib2;
+        }
+
+        return fib2 == numero;}}
+
+------------------------------------------------------------------
+PERGUNTA 3
+
+a) 1, 3, 5, 7, ___
+Próximo elemento: 7 + 2 = 9
+
+b) 2, 4, 8, 16, 32, 64, ___
+Próximo elemento: 64 * 2 = 128
+
+c) 0, 1, 4, 9, 16, 25, 36, ___
+Próximo elemento: 6^2 = 36
+
+d) 4, 16, 36, 64, ___
+Próximo elemento: 8^2 = 64
+
+e) 1, 1, 2, 3, 5, 8, ___
+Próximo elemento: 13 (soma dos dois termos anteriores)
+
+f) 2, 10, 12, 16, 17, 18, 19, ___
+Próximo elemento: 19 + 1 = 20
+Então, as respostas seriam:
+------------------------------------------------------------------
+PERGUNTA 4
+Primeira ida:
+Ligue o primeiro interruptor e aguarde alguns minutos.
+Desligue o primeiro interruptor.
+Ligue o segundo interruptor.
+Agora, há três possíveis cenários:
+Se a lâmpada estiver acesa, então o segundo interruptor controla essa lâmpada.
+Se a lâmpada estiver apagada e ainda estiver fria, então o primeiro interruptor controla essa lâmpada.
+Se a lâmpada estiver apagada, mas estiver quente, então o terceiro interruptor controla essa lâmpada.
+
+Segunda ida:
+Entre na sala em que a lâmpada está acesa. Agora, você já sabe qual interruptor controla essa lâmpada.
+Toque na lâmpada para sentir se ela está quente ou fria.
+Com base nas informações:
+Se a lâmpada estiver acesa e quente, então o terceiro interruptor controla essa lâmpada.
+Se a lâmpada estiver acesa e fria, então o segundo interruptor controla essa lâmpada.
+Se a lâmpada estiver apagada, então o primeiro interruptor controla essa lâmpada.
+
+--------------------------------------------------------------------
+PERGUNTA 5
+import java.util.Scanner;
+public class InverterString {
+	
+
+		    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        System.out.print("Digite uma string: ");
+	        String entrada = scanner.nextLine();
+	        String resultado = inverterString(entrada);
+	        System.out.println("String invertida: " + resultado);
+	    }
+
+	    public static String inverterString(String s) {
+	      
+	        char[] caracteres = s.toCharArray();
+
+	       
+	        int tamanho = caracteres.length;
+
+	       
+	        for (int i = 0; i < tamanho / 2; i++) {
+	           
+	            char temp = caracteres[i];
+	            caracteres[i] = caracteres[tamanho - 1 - i];
+	            caracteres[tamanho - 1 - i] = temp;
+	        }
+
+	      
+	        String stringInvertida = new String(caracteres);
+
+	        return stringInvertida;
+	    }
+	}
